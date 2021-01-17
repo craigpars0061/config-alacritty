@@ -27,11 +27,11 @@ window:
   # Blank space added around the window in pixels. This padding is not scaled by
   # DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 0
-    y: 0
+    x: 9
+    y: 9
 
   # Spread additional padding evenly around the terminal content.
-  dynamic_padding: false
+  dynamic_padding: true
 
   # Window decorations
   #
@@ -67,30 +67,24 @@ font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-    family: Iosevka
-    style: Light
-    # family: "Fira Code"
+    #style: Light
+    family: "Fira Code"
+    # family: Iosevka
     # family: "Source Code Pro"
-    # style: Retina
+    style: Retina
 
   # The bold font face
   bold:
-    family: Iosevka
     style: Medium
-    # family: "Fira Code"
-    # family: "Source Code Pro"
+    family: "Fira Code"
 
   # The italic font face
   italic:
-    family: Iosevka
+    family: "Fira Code"
     style: "Light Italic"
-    # style: "Light Oblique"
-    # family: "Fira Code"
-    # family: "Source Code Pro"
-    # style: "Medium Italic"
 
   # Point size of the font
-  size: 14.0
+  size: 13.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -127,9 +121,15 @@ draw_bold_text_with_bright_colors: false
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
 # custom_cursor_colors: false
+selection:
+  text: '0xbbc2cf'
+  background: '0x282c34'
+  #background: '0xb77ee0'
 
-# Colors
-colors:
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 5000
   # Default colours
   primary:
     background: '0xffffff'
@@ -142,48 +142,15 @@ colors:
   #   # text: '0x000000'
   #   cursor: '0xffffff'
 
-  # Normal colors
-  normal:
-    black:   '0x000000'
-    red:     '0xc62828'
-    green:   '0x558b2f'
-    yellow:  '0xf9a825'
-    blue:    '0x1565c0'
-    magenta: '0x6a1e9a'
-    cyan:    '0x00838f'
-    white:   '0xf2f2f2'
-
-  # Bright colors
-  bright:
-    black:   '0x545454'
-    red:     '0xef5350'
-    green:   '0x8bc34a'
-    yellow:  '0xffeb3b'
-    blue:    '0x64b5f6'
-    magenta: '0xba68c8'
-    cyan:    '0x26c6da'
-    white:   '0xe0e0e0'
-
-  # Dim colors (Optional)
-  dim:
-    black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xdddddd'
-
   # Tomorrow Night Bright
   # primary:
   #   background: '0x000000'
   #   foreground: '0xeaeaea'
-  #
+  
   # cursor:
   #   text: '0x000000'
   #   cursor: '0xffffff'
-  #
+  
   # normal:
   #   black:   '0x000000'
   #   red:     '0xd54e53'
@@ -193,7 +160,7 @@ colors:
   #   magenta: '0xc397d8'
   #   cyan:    '0x70c0ba'
   #   white:   '0xffffff'
-  #
+  
   # bright:
   #   black:   '0x666666'
   #   red:     '0xff3334'
@@ -203,6 +170,34 @@ colors:
   #   magenta: '0xb77ee0'
   #   cyan:    '0x54ced6'
   #   white:   '0xffffff'
+  
+colors:
+  # Default colors
+  primary:
+    background: '0x0A0E14'
+    foreground: '0xB3B1AD'
+
+  # Normal colors
+  normal:
+    black: '0x01060E'
+    red: '0xEA6C73'
+    green: '0x91B362'
+    yellow: '0xF9AF4F'
+    blue: '0x53BDFA'
+    magenta: '0xFAE994'
+    cyan: '0x90E1C6'
+    white: '0xC7C7C7'
+
+  # Bright colors
+  bright:
+    black: '0x686868'
+    red: '0xF07178'
+    green: '0xC2D94C'
+    yellow: '0xFFB454'
+    blue: '0x59C2FF'
+    magenta: '0xFFEE99'
+    cyan: '0x95E6CB'
+    white: '0xFFFFFF'
 
   # Indexed Colors
   #
@@ -239,10 +234,10 @@ colors:
 bell:
   animation: EaseOutExpo
   color: '0xffffff'
-  duration: 0
+  duration: 1
 
 # Background opacity
-background_opacity: 1.0
+background_opacity: 0.45
 
 # Key bindings
 #
@@ -481,10 +476,10 @@ live_config_reload: true
 #
 # You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
 # Entries in shell.args are passed unmodified as arguments to the shell.
-shell:
-  program: /usr/local/homebrew/bin/fish
-  args:
-    - --command=tmux
+# shell:
+#   program: /usr/local/homebrew/bin/fish
+#   args:
+#     - --command=tmux
 
 debug:
   # Should display the render timer
